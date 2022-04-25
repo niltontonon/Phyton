@@ -1,0 +1,21 @@
+t1 = ('Doce', 2.3, 'Bala ', 0.15, 'Pizza ', 28.9, 'Arroz ', 4.5, 'Paçoca ', 0.5, 'Pamonha', 5.4)
+soma = 0
+slist = []
+print('Veja o cardapio abaixo e digite Sim ou Nao para adicionar a sua compra. Digite encerrar a qualquer momento para parar ')
+respostas = ['sim','nao','encerrar']
+decision = ''
+for i in range(0,len(t1),2):
+  decision = input('Deseja adicionar {} no valor de {} a sua compra? '.format(t1[i], t1[i+1]))
+  while decision.lower() not in respostas:
+    print('Por favor escolha uma opcao valida')
+    decision = input('Deseja adicionar {} no valor de {} a sua compra? '.format(t1[i], t1[i+1]))
+  if decision.lower() == 'sim':
+    soma += t1[i+1]
+    slist.append(t1[i])
+    print('Ate agora o total da sua compra e de {:.2f}'.format(soma))
+  elif decision.lower() == 'nao':
+    print('item nao adicionado')
+  elif decision.lower() == 'encerrar':
+    break
+print('O valor final da sua compra e {:.2f}'.format(soma))
+print('Voce comprou os seguintes items: \n{} '.format(slist)) 
