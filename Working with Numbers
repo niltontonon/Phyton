@@ -1,0 +1,93 @@
+Validar Consumo de Combustível
+
+km_Rodados = int(input('Quantos km você rodou com seu carro?'))
+litros_Rodados = int(input('Quantos litros de combustível foram gastos?'))
+print('O seu carro faz: {:.2f} km/l'.format(km_Rodados/litros_Rodados))
+
+----------------------
+
+Tabuada versão 1
+
+n1 = int(input('Digite um numero inteiro '))
+multiplicador = 0
+print('-'*10)
+while multiplicador <= 10:
+  print(n1,' * ', multiplicador,' = ', n1*multiplicador)
+  multiplicador = multiplicador+1
+
+----------------------
+
+Tabuada versão 2
+
+while True:
+  numero = input('Digite um numero para saber a tabuada ')
+  if numero.isnumeric() == True:
+    numero = int(numero)
+    break
+  print('Por favor digite apenas numeros')
+n = 0
+while n <= 10:
+  print ('{} * {} = {}'.format(n,numero,numero*n))
+  n += 1
+
+----------------------
+
+Valdiar se um número é inteiro
+
+n1 = input('Digite um número inteiro ')
+if n1.isnumeric():
+  n1 = int(n1)
+  div = (n1 % 2)
+  if div == 0:
+    print('Seu numero é {} e ele é um numero par'.format(n1))
+  else:
+    print('Seu numero é {} e ele é um numero impar'.format(n1))    
+else:
+  print('Por favor digite apenas numeros')
+
+----------------------
+
+Validar se dois números são inteiros e divisíveis
+
+n1 = input('Digite o primeiro numero inteiro ')
+n2 = input('Digite o segundo numero inteiro ')
+if n1.isnumeric() and n2.isnumeric():
+  n1 = int(n1)
+  n2 = int(n2)
+  div = (n1 % n2)
+  if div == 0:
+    print('Seu primeiro numero é {} e seu segundo numero é {}. Eles são divisiveis'.format(n1,n2))
+  else:
+    print('Seu primeiro numero é {} e seu segundo numero é {}. Eles não são divisiveis'.format(n1,n2))
+else:
+  print('Por favor digite apenas numeros')
+
+----------------------
+
+Validar números e realizar operações numéricas
+
+n1 = input('Digite o primeiro numero inteiro ')
+n2 = input('Digite o segundo numero inteiro ')
+operacao = input('Qual operação gostaria de fazer? Soma, Subtração, Divisão, Multiplicação ou Potência? ')
+if n1.isalpha() or n2.isalpha():
+  print('Por favor digite apenas numeros')
+else:
+  n1 = float(n1)
+  n2 = float(n2)
+  if operacao.lower() == 'soma' or operacao == '+':
+    resultado = n1 + n2
+    print('Seu primeiro numero é {} e seu segundo numero é {} e você selecionou Soma. O Resultado é {:.2f}'.format(n1,n2,resultado))
+  elif operacao.lower() == 'subtração' or operacao == '-':
+    resultado = n1 - n2
+    print('Seu primeiro numero é {} e seu segundo numero é {} e você selecionou Subtração. O Resultado é {:.2f}'.format(n1,n2,resultado))
+  elif operacao.lower() == 'divisão' or operacao == '/':
+    resultado = n1 / n2
+    print('Seu primeiro numero é {} e seu segundo numero é {} e você selecionou Divisão. O Resultado é {:.2f}'.format(n1,n2,resultado))
+  elif operacao.lower() == 'multiplicação' or operacao == '*':
+    resultado = n1 * n2
+    print('Seu primeiro numero é {} e seu segundo numero é {} e você selecionou Multiplicação. O Resultado é {:.2f}'.format(n1,n2,resultado))
+  elif operacao.lower() == 'potência' or operacao == '**':
+    resultado = n1 ** n2
+    print('Seu primeiro numero é {} e seu segundo numero é {} e você selecionou Potência. O Resultado é {:.2f}'.format(n1,n2,resultado))
+  else:
+    print('Por favor escolha uma operação valida')
